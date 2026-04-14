@@ -9,12 +9,12 @@ app.use(cors());
 app.use(express.json()); // Allows us to read JSON payloads from physical scanners
 
 // --- 1. DATABASE CONNECTION ---
-// We will connect to MongoDB. This database will hold the readable, classified
-// physical specifications (chemical formulas, exact weights).
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/defense_supply";
-
-mongoose.connect(MONGO_URI)
-  .then(() => console.log("✅ Off-Chain Database Connected Securely"))
+// We connect exactly to your local MongoDB deployment as requested
+mongoose.connect("mongodb://127.0.0.1:27017/defenceDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log("✅ Off-Chain Database Connected Securely to defenceDB"))
   .catch((err) => console.error("❌ Database Connection Error:", err));
 
 

@@ -6,10 +6,10 @@ const { MNEMONIC, PROJECT_ID } = process.env;
 
 module.exports = {
   networks: {
-    // Local Ganache
+    // Local Ganache Desktop Application
     development: {
       host: "127.0.0.1",
-      port: 8545,
+      port: 7545, // Ganache Desktop defaults to 7545
       network_id: "*"
     },
 
@@ -51,7 +51,10 @@ module.exports = {
 
   compilers: {
     solc: {
-      version: "0.8.21"
+      version: "0.8.24",
+      settings: {
+        evmVersion: "paris"
+      }
     }
   }
 };

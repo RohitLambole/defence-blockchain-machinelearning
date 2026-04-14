@@ -3,8 +3,8 @@ require("dotenv").config();
 
 // 1. The Provider: Determines HOW we talk to the blockchain.
 // In production, process.env.POLYGON_URL will be an Alchemy or Infura node URL.
-// For local testing, it defaults to your local Ganache network on port 8545.
-const provider = new ethers.JsonRpcProvider(process.env.POLYGON_URL || "http://127.0.0.1:8545");
+// For local testing, it defaults to your local Ganache Desktop network on port 7545.
+const provider = new ethers.JsonRpcProvider(process.env.POLYGON_URL || "http://127.0.0.1:7545");
 
 // 2. The Wallet: Determines WHO is talking to the blockchain.
 // This is the backend's hidden automated wallet. It signs transactions securely.
